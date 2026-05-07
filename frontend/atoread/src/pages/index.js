@@ -1,0 +1,9 @@
+export {default as Login} from "./auth/Login";
+export {default as Signup} from "./auth/Register";
+export {default as Home} from "./Home";
+export {default as About} from "./About";
+export {default as Blog} from "./Blogs";
+export {default as Dashboard} from "./Dashboard";
+export {default as Profile} from "./Profile";
+export {default as PostDetail} from "./Blog/PostDetails";
+export {default as NotFound} from "./404/NotFound";
