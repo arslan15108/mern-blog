@@ -17,7 +17,7 @@ const Home = () => {
           postLoading ? Array.from({length:3}).map((_,index)=> <Loader key={index + 1} />) :
           <div className='pb-5 px-5 dark:bg-[#0a0a0a] light:bg-white dark:text-white'>
               <Hero />
-              <section id="recent-posts" className="max-w-7xl mx-auto px-6 py-12">
+              <section id="recent-posts" className="max-w-7xl mx-auto py-12">
                   <div className="flex items-end justify-between mb-12">
                     <div>
                       <h3 className="text-[10px] uppercase tracking-[0.3em] font-bold text-brand-muted mb-2">The Latest</h3>
@@ -38,7 +38,7 @@ const Home = () => {
                               whileInView={{ opacity: 1, y: 0 }}
                               viewport={{ once: true }}
                               transition={{ duration: 0.6, delay: index * 0.1 }}
-                              className="flex flex-col gap-4 group cursor-pointer dark:bg-black/30 bg-gray-400/30 backdrop-blur-md dark:shadow-amber-300 shadow-sm rounded-md border border-gray-300/20 p-4"
+                              className="max-w-7xl flex flex-col gap-4 group cursor-pointer dark:bg-black/30 bg-gray-400/30 backdrop-blur-md dark:shadow-amber-300 shadow-sm rounded-md border border-gray-300/20 p-4"
                           >
                             <Link
                               to={`post/${post?.slug}`}

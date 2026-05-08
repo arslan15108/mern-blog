@@ -1,7 +1,8 @@
 import React from 'react'
-import { motion } from 'motion/react'
+import {motion} from 'motion/react'
 import { ArrowRight } from 'lucide-react';
-const Hero = () => {
+import Orb from '../Shapes/Orb';
+const Hero = React.memo(() => {
     const FEATURED_ARTICLE = {
         id: 1,
         title: "The Architecture of Silence: Finding Stillness in Urban Complexity",
@@ -13,14 +14,14 @@ const Hero = () => {
     };
 
   return (
-      <section id="featured" className="max-w-7xl mx-auto px-6 py-12 md:py-12 dark:text-white">
+      <section id="featured" className="max-w-7xl mx-auto px-6 py-12 md:py-12 dark:text-white relative overflow-hidden bg-gray-400/20 backdrop-filter-lg rounded-lg">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="grid lg:grid-cols-2 gap-12 items-center"
+            className="grid lg:grid-cols-2 gap-12 items-center "
           >
-            <div className="order-2 lg:order-1 flex flex-col gap-6">
+            <div className="order-2 lg:order-1 flex flex-col gap-6 relative z-10">
               <div className="flex items-center gap-3">
                 <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-brand-muted px-2 py-1 bg-brand-gray inline-block">
                   Featured Article
@@ -29,7 +30,7 @@ const Hero = () => {
                   {FEATURED_ARTICLE.category}
                 </span>
               </div>
-              <h2 className="text-5xl md:text-7xl font-serif leading-[1.1] tracking-tight">
+              <h2 className="text-5xl md:text-5xl font-serif leading-[1.1] tracking-tight">
                 {FEATURED_ARTICLE.title}
               </h2>
               <p className="text-lg text-brand-muted leading-relaxed max-w-xl">
@@ -45,18 +46,61 @@ const Hero = () => {
                 </div>
               </div>
             </div>
-            <div className="order-1 lg:order-2 relative aspect-[4/3] group overflow-hidden bg-brand-gray">
+            <div className="order-1 lg:order-2 relative aspect-[4/3] group overflow-hidden bg-brand-gray relative rounded-lg">
               <motion.img
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.6 }}
                 src={FEATURED_ARTICLE.image}
                 alt={FEATURED_ARTICLE.title}
-                className="w-full h-full object-cover grayscale-[0.2] transition-all group-hover:grayscale-0"
+                className="w-full h-full object-cover grayscale-[0.2] transition-all group-hover:grayscale-0 relative z-10 "
               />
             </div>
           </motion.div>
+          <motion.div
+              animate={{
+                x: [0, 1100, 1100, 0, -300,0],  
+                y: [0, 0,   -580, -580, 0,0],
+              }}
+              transition={{
+                duration: 6,
+                repeat: Infinity,
+                ease: "linear",
+                times: [0, 0.20, 0.40, 0.60,0.80, 1,], 
+              }}
+            >
+            <Orb width="300px" height="300px" bg="bg-amber-400/30" className='blur-3xl' />
+          </motion.div>
+          <motion.div
+              animate={{
+                x: [0, 1100, 1100, 0, -300,0],  
+                y: [0, 0,   -580, -580, 0,0],
+              }}
+              transition={{
+                duration: 6,
+                repeat: Infinity,
+                ease: "linear",
+                times: [0, 0.20, 0.40, 0.60,0.80, 1,], 
+              }}
+            >
+            <Orb width="300px" height="300px" bg="bg-indigo-400/30" className='blur-3xl' />
+          </motion.div>
+         
+          <motion.div
+              animate={{
+                x: [-300, 1100, 1100, -300,-300],  
+                y: [-650, -650,  0, 0,-650],
+              }}
+              transition={{
+                duration: 6,
+                repeat: Infinity,
+                ease: "linear",
+                times: [0, 0.20, 0.40, 0.60,0.80, 1,], 
+              }}
+            >
+            <Orb width="300px" height="300px" bg="bg-indigo-400/30" className='blur-3xl' />
+          </motion.div>
      </section>
   )
-}
+})
 
 export default Hero

@@ -53,12 +53,12 @@ const Login = () => {
   };
 
   return (
-    <div className="w-full min-h-screen flex items-center justify-center bg-[#0c0c0e] px-5 relative overflow-hidden -mt-24">
+    <div className="w-full min-h-screen flex items-center justify-center px-5 relative overflow-hidden">
 
       {/* ── Background Glow Orbs ── */}
-      <Orb width="500px" height="500px" bg="bg-amber-500/10"  className="-top-40 -left-40" />
+      {/* <Orb width="500px" height="500px" bg="bg-amber-500/10"  className="-top-40 -left-40" />
       <Orb width="400px" height="400px" bg="bg-amber-700/10"  className="-bottom-20 -right-20" />
-      <Orb width="600px" height="300px" bg="bg-orange-900/10" className="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+      <Orb width="600px" height="300px" bg="bg-orange-900/10" className="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" /> */}
       <div className="relative z-10 w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
 
         {/* ── Left Panel ── */}
